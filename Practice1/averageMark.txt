@@ -1,0 +1,6 @@
+Name: Bob
+Score 1: 1
+Score 2: 2
+Score 3: 3
+Score 4: 4
+Average: 2.50
