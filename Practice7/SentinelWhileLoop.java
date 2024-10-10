@@ -1,4 +1,6 @@
-import java.util.Scanner;
+package Practice7;
+
+import java.util.*;
 
 public class SentinelWhileLoop {
     public static void main(String[] args) {
