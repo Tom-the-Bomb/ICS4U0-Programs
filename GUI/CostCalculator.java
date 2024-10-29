@@ -4,9 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class CostCalculator extends JPanel implements ActionListener {
-    JLabel itemLabel = new JLabel("Item");
-    JLabel priceLabel = new JLabel("Unit Price");
-    JLabel qtLabel = new JLabel("Quantity");
+    JLabel itemLabel = new JLabel("Item", SwingConstants.CENTER);
+    JLabel priceLabel = new JLabel("Unit Price", SwingConstants.CENTER);
+    JLabel qtLabel = new JLabel("Quantity", SwingConstants.CENTER);
     JButton costBtn = new JButton("Cost");
 
     JTextField itemInput = new JTextField();
@@ -32,6 +32,7 @@ public class CostCalculator extends JPanel implements ActionListener {
             itemLabel, priceLabel, qtLabel, costBtn
         }) {
             comp.setBounds(x, y, itemWidth, itemHeight);
+            comp.setBorder(BorderFactory.createLineBorder(Color.black, 1));
             add(comp);
             y += itemHeight + gapY;
         }
@@ -51,8 +52,8 @@ public class CostCalculator extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(costBtn)) {
             try {
-                int price = Integer.parseInt(priceInput.getText());
-                int qt = Integer.parseInt(qtInput.getText());
+                double price = Double.parseDouble(priceInput.getText());
+                double qt = Double.parseDouble(qtInput.getText());
 
                 costOutput.setText(
                     String.format("$%.2f", price * qt * 1.13)
