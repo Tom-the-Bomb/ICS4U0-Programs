@@ -22,10 +22,7 @@ public class Clock {
     }
 
     public void setClock(int totalSeconds) {
-        hours = Math.floorDiv(totalSeconds, 3600);
-        totalSeconds = Math.floorMod(totalSeconds, 3600);
-        minutes = Math.floorDiv(totalSeconds, 60);
-        seconds = Math.floorMod(totalSeconds, 60);
+        setSeconds(totalSeconds);
     }
 
     public int getHours() {
